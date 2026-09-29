@@ -52,16 +52,27 @@
 
     <hr>
 
-    <!-- Module 06: AJAX Student Table -->
-    <h2>
-        Total Students (AJAX):
-        <span id="student-count">0</span>
-    </h2>
+    <h2>Student Records (AJAX)</h2>
+    <p>Total from API: <span id="student-count">0</span></p>
 
+    <section>
+        <label for="student-search">Search name or email:</label>
+        <input type="search" id="student-search" placeholder="Type a name or email">
+
+        <label for="program-filter">Filter by program:</label>
+        <select id="program-filter">
+            <option value="">All programs</option>
+        </select>
+
+        <button type="button" id="clear-filters">Clear Filters</button>
+        <button type="button" id="refresh-students">Refresh Data</button>
+    </section>
+
+    <p id="result-count" aria-live="polite">Showing 0 students</p>
     <p id="loading-message">Loading students...</p>
     <p id="error-message"></p>
 
-    <table border="1" id="student-table">
+    <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -71,8 +82,7 @@
                 <th>Email</th>
             </tr>
         </thead>
-        <tbody id="student-table-body">
-        </tbody>
+        <tbody id="student-table-body"></tbody>
     </table>
 
     <hr>
